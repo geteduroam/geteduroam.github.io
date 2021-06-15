@@ -22,10 +22,13 @@ jobs:
           extended: true
 
       - name: Build npm
-        run: npm install
+        run: npm install --only=prod
 
       - name: Build hugo
         run: hugo --minify
+
+      - name: Patch
+        run: ./patch-dependencies.sh
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
