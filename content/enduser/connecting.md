@@ -15,4 +15,4 @@ These instructions apply for users in institutions that are eduroam IdPs and use
 3. Depending on whether your institution has enrolled in geteduroam, you will either
 	* Be sent to a website where you log in with your institution credentials (eduGAIN)
 	* Be asked for your eduroam username/password, as provided to you by your institution
-4. There is no step four, you are now connected to eduroam
+4. There is no step four, keep the app installed to stay connected to eduroam
