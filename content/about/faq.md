@@ -40,7 +40,7 @@ There are plans to set up a hosted geteduroam solution within GÉANT.  This host
 
 **geteduroam is not intended to replace the Configuration Assistance Tool** that runs on cat.eduroam.org.  In fact, geteduroam uses CAT as the central database for EAP configurations to show the list of institutions when you start the app.  IdPs that only offer EAP-TLS must register in CAT in order to show up in the institution list in geteduroam.  geteduroam supplements CAT, it does not replace it.
 
-The **geteduroam Android app** *is* intended to replace the **eduroamCAT Android app**.  The current eduroamCAT Android app is showing its age and it seems that development has stalled.  The geteduroam app will be a drop-in replacement, it can open eap-config files in the same way the eduroamCAT app does (in fact, **geteduroam uses eap-config for all platforms**)
+The **geteduroam Android app** *is* intended to replace the **eduroamCAT Android app**.  The current eduroamCAT Android app is showing its age, is no longer developed, and is now only recommended for Android versions 7.0 and earlier.  The geteduroam app is a drop-in replacement, it can open eap-config files in the same way the eduroamCAT app does (in fact, **geteduroam uses eap-config for all platforms**)
 
 
 ## How does the geteduroam app know of participating IdPs
