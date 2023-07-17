@@ -1,0 +1,31 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – About Goldydocs</title><link>/about/</link><description>Recent content in About Goldydocs on Goldydocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/about/index.xml" rel="self" type="application/rss+xml"/><item><title>About: Project goals</title><link>/about/goals/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/goals/</guid><description>
+&lt;h4 id="primary-goal">Primary goal&lt;/h4>
+&lt;p>&lt;strong>Allow users to easily and securely connect to eduroam&lt;/strong>&lt;/p>
+&lt;h4 id="subgoals">Subgoals&lt;/h4>
+&lt;p>The geteduroam project has two subgoals&lt;/p>
+&lt;ol>
+&lt;li>Create apps to allow users to easily set up eduroam correctly on their devices&lt;/li>
+&lt;li>Develop server software to issue client certificates that the apps can use&lt;/li>
+&lt;/ol>
+&lt;h4 id="rationale">Rationale&lt;/h4>
+&lt;p>In the EAP-PEAP or EAP-TTLS protocols, the users password is sent over the air encrypted for every login, but &lt;strong>the key used for encryption is not always checked&lt;/strong>. There are multiple known attacks that exploit this.&lt;/p>
+&lt;p>Because of this, we believe that users get the best security by using EAP-TLS. This is why &lt;strong>we develop server software that can issue client certificates&lt;/strong> to be used with EAP-TLS.&lt;/p>
+&lt;p>Not every institution or roaming operator will use our infrastructure for EAP-TLS from day one. Because of this, &lt;strong>the geteduroam app will also support EAP-PEAP and EAP-TTLS&lt;/strong>, so that users can still have the highest possible level of protection available when they use the geteduroam app.&lt;/p></description></item><item><title>About: Frequently Asked Questions</title><link>/about/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/faq/</guid><description>
+&lt;h4 id="the-app-asks-me-for-a-usernamepassword-it-doesnt-use-edugain">The app asks me for a username/password, it doesn&amp;rsquo;t use eduGAIN?&lt;/h4>
+&lt;p>geteduroam uses CAT for the institution list, and profiles are downloaded directly from CAT, so eduGAIN is not involved in this case. A profile in CAT can be marked as a geteduroam profile, then the user will be sent to a webpage where they have to log in. This case may require eduGAIN, but it will typically go directly to the institutions SAML page.&lt;/p>
+&lt;p>There are plans to set up a hosted geteduroam solution within GÉANT, which will allow the use of eduGAIN. This hosted solution cannot be used by institutions without NRO approval.&lt;/p>
+&lt;h4 id="what-happens-with-passwords-entered-in-the-app">What happens with passwords entered in the app?&lt;/h4>
+&lt;p>Passwords entered directly in the app are &lt;strong>only&lt;/strong> used to configure a Wi-Fi profile in the application. They are stored in the operating system to allow reconnecting to eduroam at a later time. In most operating systems, the app will not be able to recover the password, so if a change is made to the profile the user must re-enter the password.&lt;/p>
+&lt;h4 id="where-does-the-institution-list-in-the-app-come-from">Where does the institution list in the app come from?&lt;/h4>
+&lt;p>geteduroam uses CAT for the institution list, so users can use the geteduroam app no regardless whether the institution supports PEAP/TTLS or obtaining client certificates via OAuth&lt;/p>
+&lt;h4 id="which-realm-does-geteduroam-use">Which realm does geteduroam use?&lt;/h4>
+&lt;p>There is no specific realm for geteduroam, since geteduroam is just another IdP solution with a RADIUS server. If an institution self-hosts this RADIUS server, it will be the realm (subrealm?) of the institution. If an NRO sets up geteduroam, it will be a realm picked by that NRO.&lt;/p>
+&lt;p>There are plans to set up a hosted geteduroam solution within GÉANT, which will have a common realm. This hosted solution cannot be used by institutions without NRO approval.&lt;/p>
+&lt;h4 id="can-any-institution-join-without-nro-approval">Can any institution join without NRO approval?&lt;/h4>
+&lt;p>geteduroam is open source and anyone can set up their own instance with RADIUS, in the same way anyone can set up any RADIUS server. Inclusion in the eduroam fabric needs NRO approval, just like before.&lt;/p>
+&lt;p>There are plans to set up a hosted geteduroam solution within GÉANT. This hosted solution cannot be used by institutions without NRO approval.&lt;/p>
+&lt;h4 id="will-geteduroam-replace-cat">Will geteduroam replace CAT&lt;/h4>
+&lt;p>&lt;strong>geteduroam is not intended to replace the Configuration Assistance Tool&lt;/strong> that runs on cat.eduroam.org. In fact, geteduroam uses CAT as the central database for EAP configurations to show the list of institutions when you start the app. IdPs that only offer EAP-TLS must register in CAT in order to show up in the institution list in geteduroam. geteduroam supplements CAT, it does not replace it.&lt;/p>
+&lt;p>The &lt;strong>geteduroam Android app&lt;/strong> &lt;em>is&lt;/em> intended to replace the &lt;strong>eduroamCAT Android app&lt;/strong>. The current eduroamCAT Android app is showing its age and it seems that development has stalled. The geteduroam app will be a drop-in replacement, it can open eap-config files in the same way the eduroamCAT app does (in fact, &lt;strong>geteduroam uses eap-config for all platforms&lt;/strong>)&lt;/p>
+&lt;h4 id="how-does-the-geteduroam-app-know-of-participating-idps">How does the geteduroam app know of participating IdPs&lt;/h4>
+&lt;p>geteduroam uses CAT for the institution list. &lt;a href="/idp/cat">A CAT profile can be marked as an geteduroam profile&lt;/a> with a server URL, which then will cause the app to initiate a flow to obtain a client certificate instead of configuring a TTLS/PEAP profile.&lt;/p></description></item></channel></rss>

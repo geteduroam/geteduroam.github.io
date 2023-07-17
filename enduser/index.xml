@@ -1,0 +1,19 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – User instructions</title><link>/enduser/</link><description>Recent content in User instructions on Goldydocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/enduser/index.xml" rel="self" type="application/rss+xml"/><item><title>Enduser: Connecting using geteduroam</title><link>/enduser/connecting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/enduser/connecting/</guid><description>
+&lt;p>These instructions apply for users in institutions that are eduroam IdPs and use eduroam CAT&lt;/p>
+&lt;ol>
+&lt;li>Download the geteduroam app for your platform
+&lt;ul>
+&lt;li>&lt;a href="https://play.google.com/store/apps/details?id=app.eduroam.geteduroam">Android&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://apps.apple.com/no/app/geteduroam/id1504076137">iOS/iPadOS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/geteduroam/windows-app/releases/download/geteduroam-3.2.4/geteduroam.exe">Windows&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Start the app and select your institution&lt;/li>
+&lt;li>Depending on whether your institution has enrolled in geteduroam, you will either
+&lt;ul>
+&lt;li>Be sent to a website where you log in with your institution credentials (eduGAIN)&lt;/li>
+&lt;li>Be asked for your eduroam username/password, as provided to you by your institution&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>There is no step four, you are now connected to eduroam&lt;/li>
+&lt;/ol></description></item></channel></rss>

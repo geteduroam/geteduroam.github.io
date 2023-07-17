@@ -1,0 +1,83 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goldydocs – Developers</title><link>/docs/developer/</link><description>Recent content in Developers on Goldydocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="/docs/developer/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Contributing to geteduroam</title><link>/docs/developer/contribute/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/developer/contribute/</guid><description>
+&lt;p>We use GitHub for development under the &lt;a href="https://github.com/geteduroam">geteduroam organization&lt;/a>.&lt;/p>
+&lt;p>You can create issues on the projects there if you find any bugs, or send pull requests.&lt;/p>
+&lt;p>We also have a channel #geteduroam on the &lt;a href="https://eduroam.slack.com">eduroam Slack&lt;/a>.&lt;/p></description></item><item><title>Docs: API for obtaining client certificates</title><link>/docs/developer/api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/developer/api/</guid><description>
+&lt;p>The server on demo.eduroam.no can be accessed directly by a user, where he is required to authenticate and then allowed to download a client certificated, packed in a profile (eap-metadata, mobileconfig, pkcs12, pem). But not all platforms have support for importing configuration files; some operating systems only have internal APIs for configuring wireless profiles (e.g. Windows and Android). For these platforms, the server allows retrieving profiles through a web API. This is a description of the API.&lt;/p>
+&lt;h4 id="discovery">Discovery&lt;/h4>
+&lt;p>For discovery, use the discovery JSON file hosted at &lt;a href="https://discovery.eduroam.app/v1/discovery.json">https://discovery.eduroam.app/v1/discovery.json&lt;/a>&lt;/p>
+&lt;p>&lt;strong>TODO&lt;/strong> document the format of the discovery. It is rather straightforward, but explicit documentation is better&lt;/p>
+&lt;h4 id="authorization-endpoint">Authorization endpoint&lt;/h4>
+&lt;p>Build a URL for the authorization endpoint; take the &lt;code>authorization_endpoint&lt;/code> string from the discovery,
+and add the following GET parameters:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>response_type&lt;/code> (set to &lt;code>code&lt;/code>)&lt;/li>
+&lt;li>&lt;code>code_challenge_method&lt;/code> (set to &lt;code>S256&lt;/code>)&lt;/li>
+&lt;li>&lt;code>scope&lt;/code> (choose between &lt;code>eap-metadata&lt;/code> and &lt;code>mobileconfig&lt;/code>)&lt;/li>
+&lt;li>&lt;code>code_challenge&lt;/code> (a code challenge, as documented in RFC7636 section 4)&lt;/li>
+&lt;li>&lt;code>redirect_uri&lt;/code> (where the user should be redirected after accepting or rejecting your application, GET parameters will added to this URL by the server)&lt;/li>
+&lt;li>&lt;code>client_id&lt;/code> (your client ID as known by the server)&lt;/li>
+&lt;li>&lt;code>state&lt;/code> (a random string that will be set in a GET parameter to the &lt;code>redirect_uri&lt;/code>, for you to verify it&amp;rsquo;s the same flow)&lt;/li>
+&lt;/ul>
+&lt;p>You have created a URL, for example:&lt;/p>
+&lt;pre>&lt;code>https://demo.eduroam.no/authorize.php?response_type=code&amp;amp;code_challenge_method=S256&amp;amp;scope=eap-metadata&amp;amp;code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM&amp;amp;redirect_uri=http%3A%2F%2Flocalhost%3A1080%2Fcallback&amp;amp;client_id=00000000-0000-0000-0000-000000000000&amp;amp;state=0
+&lt;/code>&lt;/pre>
+&lt;p>You open a local webbrowser to this URL on the users&amp;rsquo; device and listen on the &lt;code>redirect_uri&lt;/code> for a request to return.
+Upon receiving a request, reclaim focus to your application and handle the request.
+You may receive these GET parameters:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>code&lt;/code> (a code that you can use on the token endpoint)&lt;/li>
+&lt;li>&lt;code>error&lt;/code> (an error message that you can present to the user)&lt;/li>
+&lt;li>&lt;code>state&lt;/code> (the same value as your earlier &lt;code>state&lt;/code> GET parameter)&lt;/li>
+&lt;/ul>
+&lt;p>As a reply to this request, you may simply return a message to the user stating that he should return to the application.
+Depending on the platform, you may also return code to trigger a return to the application.&lt;/p>
+&lt;h4 id="token-endpoint">Token endpoint&lt;/h4>
+&lt;p>The token endpoint requires a &lt;code>code&lt;/code>, which you obtain via the Authorization endpoint.
+Use the &lt;code>token_endpoint&lt;/code> string from the discovery.&lt;/p>
+&lt;p>You need the following POST parameters:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>grant_type&lt;/code> (set to &lt;code>authorization_code&lt;/code>)&lt;/li>
+&lt;li>&lt;code>code&lt;/code> (the code received from the authorization endpoint)&lt;/li>
+&lt;li>&lt;code>redirect_uri&lt;/code> (repeat the value used in the previous request, as mandated by RFC7636)&lt;/li>
+&lt;li>&lt;code>client_id&lt;/code> (repeat the value used in the previous request, as mandated by RFC7636)&lt;/li>
+&lt;li>&lt;code>code_verifier&lt;/code> (a code verifier, as documented in RFC7636 section 4)&lt;/li>
+&lt;/ul>
+&lt;p>You get back a JSON dictionary, containing the following keys:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>access_token&lt;/code>&lt;/li>
+&lt;li>&lt;code>token_type&lt;/code> (set to &lt;code>Bearer&lt;/code>)&lt;/li>
+&lt;li>&lt;code>expires_in&lt;/code> (validity of the &lt;code>access_token&lt;/code> in seconds)&lt;/li>
+&lt;/ul>
+&lt;p>Example HTTP conversation&lt;/p>
+&lt;pre>&lt;code>POST /token.php HTTP/1.1
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 209
+grant_type=authorization_code&amp;amp;code=v2.local.AAAAAA&amp;amp;redirect_uri=http%3A%2F%2Flocalhost%3A1080%2Fcallback&amp;amp;client_id=00000000-0000-0000-0000-000000000000&amp;amp;code_verifier=dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
+HTTP/1.1 200 OK
+Cache-Control: no-store
+Content-Type: application/json;charset=UTF-8
+Pragma: no-cache
+{
+&amp;quot;access_token&amp;quot;: &amp;quot;v2.local.AAAAA…==&amp;quot;,
+&amp;quot;token_type&amp;quot;: &amp;quot;Bearer&amp;quot;,
+&amp;quot;expires_in&amp;quot;: 3600
+}
+&lt;/code>&lt;/pre>
+&lt;h4 id="generator-endpoint">Generator endpoint&lt;/h4>
+&lt;p>The generator requires an access_token, as bearer. You&amp;rsquo;ve obtained this from the token endpoint.
+For the URL to the generator, use the &lt;code>generator_endpoint&lt;/code> string from the discovery.&lt;/p>
+&lt;pre>&lt;code>POST /generate.php? HTTP/1.1
+Accept: application/x-eap-config
+Authorization: Bearer AAAAAA…==
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 19
+format=eap-metadata
+HTTP/1.1 200 OK
+Cache-Control: no-store
+Content-Disposition: attachment; filename=&amp;quot;johndoe.xml&amp;quot;
+Content-Type: application/eap-config
+Pragma: no-cache
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;
+…
+&lt;/code>&lt;/pre></description></item></channel></rss>
