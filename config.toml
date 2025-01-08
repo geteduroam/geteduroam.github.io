@@ -1,38 +1,18 @@
 baseURL = "https://www.geteduroam.app"
 languageCode = "en-gb"
 title = "geteduroam"
-theme = "techdoc"
+theme = "hugo-book"
+enableGitInfo = true
 
 [params]
-menu_style = "open-menu" # "open-menu" or "slide-menu"
-custom_font_color = "white"
-custom_background_color = "#1568c5"
+BookTheme = 'auto' # light/dark/auto
+BookToC = true
+BookSection = '*'
+BookDateFormat = 'Jan, 2006'
+BookLogo = 'geteduroam-inverse.png'
+BookSearch = true
+BookComments = false
 
-[menu]
-[[menu.main]]
-identifier = "home"
-name = "Home"
-title = "Home"
-url = "/"
-weight = 1
-
-[[menu.main]]
-identifier = "download"
-name = "Apps"
-title = "Apps"
-url = "/download/"
-weight = 2
-
-[[menu.main]]
-identifier = "github"
-name = "GitHub"
-title = "GitHub"
-url = "https://github.com/geteduroam"
-weight = 3
-
-[[menu.main]]
-identifier = "list"
-name = "Mailing list"
-title = "Mailing list"
-url = "https://lists.geant.org/sympa/arc/geteduroam"
-weight = 4
+BookRepo = 'https://github.com/geteduroam/geteduroam.github.io'
+BookCommitPath = 'commit'
+BookEditPath = 'edit/main'
