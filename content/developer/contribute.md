@@ -1,8 +1,9 @@
 ---
 title: "Contributing to geteduroam"
-date: Tue  8 Sep 2020 21:10:36 CEST
 weight: 510
 ---
+
+# Contributing to geteduroam
 
 We use GitHub for development under the [geteduroam organization](https://github.com/geteduroam).
 

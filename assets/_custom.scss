@@ -1,0 +1,29 @@
+body {
+	font-family: sans-serif;
+}
+nav.topMenu {
+	margin-top: -1em;
+	margin-bottom: 1em;
+	border-bottom: 1px solid rgba(128,128,128,.1);
+}
+nav.topMenu ul {
+	padding: 0;
+	display: flex;
+	gap: 2.4em;
+}
+nav.topMenu li {
+	display:inline;
+	font-size: 1rem;
+}
+
+.book-menu a {
+	border-left: 2px solid rgba(0,0,0,0);
+	padding-left: 4px;
+}
+.book-menu a.active {
+	border-color: var(--color-link);
+}
+
+article a {
+	text-decoration: underline !important;
+}

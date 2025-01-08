@@ -1,19 +1,20 @@
 ---
 title: "API for obtaining client certificates"
-date: Mon, 7 Sep 2020 00:26:11 +0200
 weight: 520
 ---
 
+# API for obtaining client certificates
+
 The server on demo.eduroam.no can be accessed directly by a user, where he is required to authenticate and then allowed to download a client certificated, packed in a profile (eap-metadata, mobileconfig, pkcs12, pem).  But not all platforms have support for importing configuration files; some operating systems only have internal APIs for configuring wireless profiles (e.g. Windows and Android).  For these platforms, the server allows retrieving profiles through a web API.  This is a description of the API.
 
-#### Discovery
+## Discovery
 
 For discovery, use the discovery JSON file hosted at https://discovery.eduroam.app/v1/discovery.json
 
 **TODO** document the format of the discovery.  It is rather straightforward, but explicit documentation is better
 
 
-#### Authorization endpoint
+## Authorization endpoint
 
 Build a URL for the authorization endpoint; take the `authorization_endpoint` string from the discovery,
 and add the following GET parameters:
@@ -42,7 +43,7 @@ As a reply to this request, you may simply return a message to the user stating 
 Depending on the platform, you may also return code to trigger a return to the application.
 
 
-#### Token endpoint
+## Token endpoint
 
 The token endpoint requires a `code`, which you obtain via the Authorization endpoint.
 Use the `token_endpoint` string from the discovery.
@@ -82,7 +83,7 @@ Example HTTP conversation
 	}
 
 
-#### Generator endpoint
+## Generator endpoint
 
 The generator requires an access_token, as bearer.  You've obtained this from the token endpoint.
 For the URL to the generator, use the `generator_endpoint` string from the discovery.
