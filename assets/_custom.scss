@@ -1,0 +1,83 @@
+body {
+	/* don't use a fancy font from Google Fonts */
+	font-family: sans-serif;
+}
+
+nav.topMenu {
+	margin-top: -1em;
+	margin-bottom: 1em;
+	border-bottom: 1px solid rgba(153,153,153,.5);
+}
+nav.topMenu ul {
+	padding: 0;
+	display: flex;
+	gap: 2.4em;
+	padding-left: 1.2em;
+}
+nav.topMenu li {
+	display:inline;
+	font-size: 1rem;
+}
+
+#TableOfContents {
+	margin-top: 3em;
+	padding: 1em 0 .1em 1em;
+	border-left: 1px dashed rgba(153,153,153,.5);
+}
+
+.book-menu a {
+	border-left: 2px solid rgba(0,0,0,0);
+	padding-left: 4px;
+}
+.book-menu a.active {
+	border-color: var(--color-link);
+}
+
+article a {
+	text-decoration: underline !important;
+}
+
+.sidelogo {
+	float: left;
+	margin-right: 2rem;
+	width: 6rem;
+}
+.landing-title {
+	margin-top: 1rem;
+}
+.landing-title > span {
+	display: block;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+.landing-title > small {
+	font-size: .4em;
+	color: gray;
+}
+
+ul.download-buttons > li {
+	display: inline-block;
+	vertical-align: top;
+}
+ul.download-buttons a {
+	display:inline-block;
+}
+.download-button-android img {
+	max-height: 3.68rem;
+}
+.download-button-ios {
+	margin-top:.6rem;
+}
+.download-button-windows {
+	margin: .6rem;
+	height: 2.5rem;
+	background: black url('download/win.svg') no-repeat;
+	background-size: 1.5rem;
+	background-position: .4rem 50%;
+	color: white;
+	border-radius: .4rem;
+	border: 1px solid gray;
+	padding: .5rem 1.5rem .1rem 2.5rem;
+	font-weight: bold;;
+}

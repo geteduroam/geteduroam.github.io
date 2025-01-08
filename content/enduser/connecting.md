@@ -1,8 +1,9 @@
 ---
 title: "Connecting using geteduroam"
-date: Thu 14 Jul 2022 14:22:58 CEST
 weight: 310
 ---
+
+# Connecting using geteduroam
 
 These instructions apply for users in institutions that are eduroam IdPs and use eduroam CAT
 

@@ -1,14 +1,15 @@
 ---
 title: "Pseudo-credential and CAT"
-date: Wed 17 Mar 2021 10:15:38 CET
 weight: 410
 ---
+
+# Pseudo-credential and CAT
 
 **NOTE: This is ONLY needed if you use the pseudo credential. If you are unsure, you are not using it.**
 
 When you have set up a geteduroam server (instructions pending), you must create a CAT profile for your users.
 
-#### Creating a geteduroam profile in CAT
+## Creating a geteduroam profile in CAT
 
 You need an admin account on eduroam CAT for this
 
@@ -22,7 +23,7 @@ After this, it will take a while for the discovery database to update.
 This can take up to 24 hours.
 
 
-#### Creating a hybrid profile in CAT
+## Creating a hybrid profile in CAT
 
 NOTE: This is advanced and you probably don't need this!
 

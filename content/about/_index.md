@@ -1,8 +1,10 @@
 ---
 title: "Introduction to geteduroam"
-date: Tue 15 Sep 2020 15:56:28 CEST
 weight: 200
+bookCollapseSection: true
 ---
+
+# Introduction to geteduroam
 
 geteduroam is a proposed extension of the NREN T&I services, aimed at increasing the update and use of eduroam by students and faculty members. The idea is to do away with the need for separate eduroam user accounts, and instead use national federated Id (through eduGAIN such as SURFconext, Swamid, FEIDE, HAKA, etc) to automatically generate eduroam login credentials in form of client certificates as needed. In addition, geteduroam will deliver apps for user devices that will automatically install and configure eduroam.
 
