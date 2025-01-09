@@ -1,15 +1,16 @@
 ---
 title: "Project goals"
-date: Mon, 7 Sep 2020 00:26:11 +0200
 weight: 210
 ---
 
-#### Primary goal
+# Project goals
+
+## Primary goal
 
 **Allow users to easily and securely connect to eduroam**
 
 
-#### Subgoals
+## Subgoals
 
 The geteduroam project has two subgoals
 
@@ -17,7 +18,7 @@ The geteduroam project has two subgoals
 2. Develop server software to issue client certificates that the apps can use
 
 
-#### Rationale
+## Rationale
 
 In the EAP-PEAP or EAP-TTLS protocols, the users password is sent over the air encrypted for every login, but **the server certificates used for the secure channel are not always validated**.  There are multiple known attacks that exploit this.
 
