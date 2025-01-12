@@ -7,8 +7,11 @@ body {
 	> li:has(label) {
 		margin-bottom: 2.5em;
 	}
-	li > label {
+	> li > label {
 		font-weight: bold;
+	}
+	> li > ul {
+		padding-inline-start: 0;
 	}
 }
 
