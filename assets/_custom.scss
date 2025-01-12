@@ -76,16 +76,47 @@ ul.download-buttons {
 		margin-top: .6rem;
 	}
 	.download-button-windows {
-		margin: .6rem;
-		height: 2.5rem;
 		background: black url('download/win.svg') no-repeat;
+		background-position: .4rem .4rem;
+	}
+	.download-button-linux {
+		background: black url('download/lin.svg') no-repeat;
+		background-position: .4rem .6rem;
+	}
+	.download-button-windows, .download-button-linux {
+		margin: .6rem;
+		margin-right: 0;
+		height: 2.5rem;
 		background-size: 1.5rem;
-		background-position: .4rem 50%;
 		color: white;
 		border-radius: .4rem;
 		border: 1px solid gray;
 		padding: .5rem 1.5rem .1rem 2.5rem;
-		font-weight: bold;;
+		font-weight: bold;
+	}
+	details.download-button-windows, details.download-button-linux {
+		padding: 0;
+		height: auto;
+		min-height: 2.5rem;
+		text-align: center;
+
+		summary {
+			padding: .7rem 1.5rem .6rem 2.5rem;
+			margin: 0;
+		}
+		::marker {
+			content: '';
+		}
+		ul {
+			padding: 0;
+			display: flex;
+			list-style: none;
+			justify-content: space-around;
+
+			a {
+				color: white;
+			}
+		}
 	}
 }
 

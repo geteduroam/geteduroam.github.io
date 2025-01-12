@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="512" height="384" version="1.1" viewBox="0 32 512 384" xmlns="http://www.w3.org/2000/svg">
+	<ellipse cx="134" cy="231" rx="128" ry="136" fill="#fff"/>
+	<ellipse cx="388" cy="245" rx="121" ry="99" fill="#fff"/>
+	<circle cx="310" cy="245" r="34"/>
+	<circle cx="203" cy="245" r="49"/>
+	<circle cx="285" cy="235" r="14" fill="#fff"/>
+	<circle cx="165" cy="225" r="18" fill="#fff"/>
+	<path d="m170 301h200l-100 85z" fill="#fb0"/>
+</svg>
