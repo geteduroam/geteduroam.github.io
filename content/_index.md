@@ -1,6 +1,7 @@
 ---
 title: "easily and securely connect to eduroam"
 weight: 100
+description: geteduroam is a project to simplify the process of connecting to eduroam for end users
 ---
 
 <div><img src="geteduroam.png" alt="geteduroam logo" class="sidelogo"></div>
@@ -14,9 +15,9 @@ weight: 100
 <li><a class="download-button-windows" href="https://dl.eduroam.app/windows/x86_64/geteduroam.exe">Windows</a>
 </ul>
 
-<p>geteduroam is a project to <strong><a href="about/goals/">simplify the process of connecting to eduroam</a></strong> for end users</p>
+geteduroam is a project to **[simplify the process of connecting to eduroam](about/goals/)** for end users
 
-<div class="sponsors">
+<p class="sponsors">
 <img src="sponsors/nordunet.png" alt="NORDUnet-logo">
 <img src="sponsors/deic.svg" alt="DeiC-logo">
 <img src="sponsors/surf.svg" alt="SURF-logo">
@@ -24,4 +25,4 @@ weight: 100
 <img src="sponsors/govroam.png" alt="govroam-logo">
 <img src="sponsors/ias.png" alt="IAS-logo">
 <img src="sponsors/co-funded-eu.svg" alt="Co-funded by the European Union-logo" class="opaque">
-</div>
+</p>

@@ -4,6 +4,10 @@ title = "geteduroam"
 theme = "hugo-book"
 enableGitInfo = true
 
+[markup.goldmark.renderer]
+# Allow HTML in Markdown
+unsafe = true
+
 [params]
 # (Optional, default light) Sets color theme: light, dark or auto.
 # Theme 'auto' switches between dark and light modes based on browser/os preferences
