@@ -16,6 +16,7 @@ description: geteduroam is a project to simplify the process of connecting to ed
 	<ul>
 		<li><a href="https://dl.eduroam.app/windows/amd64/geteduroam.exe">Intel/AMD</a>
 		<li><a href="https://dl.eduroam.app/windows/arm64/geteduroam.exe">ARM</a>
+		<li><a href="https://github.com/geteduroam/windows-app/releases">⎋ GitHub</a>
 	</ul>
 </details>
 <li><details class="download-button-linux"><summary>Linux</summary>
