@@ -3,20 +3,12 @@ body {
 	font-family: sans-serif;
 }
 
-nav.topMenu {
-	margin-top: -1em;
-	margin-bottom: 1em;
-	border-bottom: 1px solid rgba(153,153,153,.5);
-
-	ul {
-		padding: 0;
-		display: flex;
-		gap: 2.4em;
-		padding-left: 1.2em;
+.book-menu-content > nav > ul {
+	> li:has(label) {
+		margin-bottom: 2.5em;
 	}
-	li {
-		display: inline;
-		font-size: 1rem;
+	li > label {
+		font-weight: bold;
 	}
 }
 
@@ -47,7 +39,7 @@ article a {
 }
 
 .landing-title {
-	margin-top: 1rem;
+	margin-top: 0 !important;
 
 	> span {
 		display: block;

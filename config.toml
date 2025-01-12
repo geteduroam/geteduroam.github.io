@@ -1,5 +1,5 @@
 baseURL = "https://www.geteduroam.app"
-languageCode = "en-gb"
+languageCode = "en-GB"
 title = "geteduroam"
 theme = "hugo-book"
 enableGitInfo = true
@@ -7,6 +7,20 @@ enableGitInfo = true
 [markup.goldmark.renderer]
 # Allow HTML in Markdown
 unsafe = true
+
+[markup.tableOfContents]
+startLevel = 1
+
+[menu]
+[[menu.after]]
+name = "Github"
+url = "https://github.com/geteduroam"
+weight = 10
+
+[[menu.after]]
+name = "Mailing list"
+url = "https://lists.geant.org/sympa/arc/geteduroam"
+weight = 20
 
 [params]
 # (Optional, default light) Sets color theme: light, dark or auto.
