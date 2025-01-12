@@ -27,6 +27,8 @@ description: geteduroam is a project to simplify the process of connecting to ed
 
 geteduroam is a project to **[simplify the process of connecting to eduroam](about/goals/)** for end users
 
+## Sponsors
+
 <p class="sponsors">
 <img src="sponsors/nordunet.png" alt="NORDUnet-logo">
 <img src="sponsors/deic.svg" alt="DeiC-logo">
