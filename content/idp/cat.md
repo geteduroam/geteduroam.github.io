@@ -5,14 +5,19 @@ weight: 410
 
 # Pseudo-credential and CAT
 
-⚠️ **This is ONLY needed if you use the pseudo credential. If you are unsure, you are not using it.**
+{{% hint warning %}}
+⚠️ **This is ONLY needed if you use the pseudo credential.  
+If you are unsure, you are not using it.**
+{{% /hint %}}
 
 When you have set up a geteduroam server (instructions pending), you must create a CAT profile for your users.
 
 
 ## Creating a geteduroam profile in CAT
 
+{{% hint info %}}
 🛂 You need an admin account on eduroam CAT for this
+{{% /hint %}}
 
 1. Go to https://cat.eduroam.org/admin/ and log in with your credentials
 2. Select your institution
