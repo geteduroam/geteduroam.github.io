@@ -13,12 +13,12 @@ startLevel = 1
 
 [menu]
 [[menu.after]]
-name = "Github"
+name = "GitHub"
 url = "https://github.com/geteduroam"
 weight = 10
 
 [[menu.after]]
-name = "Mailing list"
+name = "Mailing List"
 url = "https://lists.geant.org/sympa/arc/geteduroam"
 weight = 20
 
